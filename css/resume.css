@@ -1,0 +1,359 @@
+/*!
+ * Start Bootstrap - Resume v5.0.7 (https://startbootstrap.com/template-overviews/resume)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
+ */
+
+body {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  padding-top: 54px;
+  background-color: #002147;
+  color: #efefef;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+p {
+  margin-bottom: 0.25rem;
+  margin-top: 0rem;
+  max-width: 45rem;
+}
+
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+p.lead {
+  font-size: 1.1rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.subheading {
+  font-weight: 500;
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #495057;
+  color: #fff !important;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom:0.5rem;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+.social-icons a:hover {
+  background-color: #17c2d6;
+}
+
+.dev-icons {
+  font-size: 3rem;
+}
+
+.dev-icons .list-inline-item i:hover {
+  color: #17c2d6;
+}
+
+#sideNav {
+  background-color: #2694ac;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  color: #e4e4e4;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+
+#sideNav .navbar-toggler:focus {
+  outline-color: #3b80bb;
+}
+
+#sideNav .navbar-toggler:focus {
+  outline-color: #3b80bb;
+}
+
+@media (min-width: 992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh;
+  }
+  #sideNav .navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto auto 0;
+    padding: 0.5rem;
+  }
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+  #sideNav .navbar-collapse {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+  }
+  #sideNav .navbar-collapse .navbar-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block;
+  }
+}
+
+section.resume-section {
+  padding-top: 5rem ;
+  padding-bottom: 5rem ;
+  max-width: 80rem;
+  border-top: solid 1px #aaa;
+  background-color: 	#002147;
+}
+
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
+
+.resume-item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: fit-content;
+  }
+  section.resume-section .resume-item .resume-date {
+    min-width: 28rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem ;
+    padding-bottom: 3rem ;
+  }
+}
+
+.bg-primary {
+  background-color: #2694ac !important;
+}
+
+.text-primary {
+  color: #17c2d6 !important;
+}
+
+a {
+  color: #05d1e9;
+}
+
+a:hover, a:focus, a:active {
+  color: #8aeaff;
+}
+
+.date {
+  margin-bottom: 0;
+}
+
+.book-cover {
+  width: 4rem;
+  float: left;
+  margin-right: 1rem;
+}
+
+.small-book-cover {
+  width: 6rem;
+  max-height: 10rem;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.box-item {
+  display: flow-root;
+  margin-bottom: 1rem;
+  text-align: justify;
+  width: 38rem;
+}
+
+.mb-0 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.resume-content {
+  margin-bottom: 0.25rem;
+}
+
+.artwork {
+  max-width: 95%;
+  max-height: 40rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.blockquote {
+  margin-left: 10%;
+  width: 50%;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.blogpost-intermission {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+.bigquote {
+  font-size: 2rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.small-book {
+  float: left;
+}
+
+
+.featurette-icon {
+  display: block;
+  width: 100%;
+  color: #3f51b5;
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+
+
+.media.stream-item {
+  margin-bottom: 2rem;
+}
+.media.stream-item .article-title,
+.card-simple .article-title {
+  font-size: 1.25rem;
+  color: #3f51b5;
+}
+.media.stream-item .article-style,
+.card-simple .article-style {
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+.media.stream-item .stream-meta {
+  margin-top: 5px;
+}
+.media.stream-item img {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .media.stream-item img {
+    max-width: 80px;
+  }
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-outline-primary {
+  color: #fff !important;
+  background-color: #00aca8 !important;
+  border-color: #00aca8 !important;
+}
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #00aca8 !important;
+  border-color: #00aca8 !important;
+}
+

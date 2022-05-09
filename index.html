@@ -1,664 +1,1240 @@
-<!doctype html><html lang=en-us>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=generator content="Wowchemy 5.3.0 for Hugo">
-<meta name=author content="Lalith Bharadwaj Baru">
-<meta name=description content="Professor of Artificial Intelligence">
-<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-<meta name=theme-color content="#dd2c00">
-<link rel=stylesheet href=/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
-<link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather&family=Roboto+Mono&display=swap">
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather&family=Roboto+Mono&display=swap" media=print onload="this.media='all'">
-<link rel=stylesheet href=/css/wowchemy.f1482fb1ae5e07fd661689071102d211.css>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>François Chollet - Personal Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <link href="/css/fontawesome/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/resume.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script>
+  function AddReadMore() {
+      //This limit you can set after how much characters you want to show Read More.
+      var carLmt = 256;
+      // Text to show when text is collapsed
+      var readMoreTxt = " .... Read More";
+      // Text to show when text is expanded
+      var readLessTxt = " Read Less";
 
 
+      //Traverse all selectors with this class and manupulate HTML part to show Read More
+      $(".addReadMore").each(function() {
+          if ($(this).find(".firstSec").length)
+              return;
 
-<link rel=alternate href=/index.xml type=application/rss+xml title="Lalith Bharadwaj Baru">
-<link rel=manifest href=/manifest.webmanifest>
-<link rel=icon type=image/png href=/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png>
-<link rel=apple-touch-icon type=image/png href=/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png>
-<meta property="twitter:card" content="summary">
-<meta property="og:site_name" content="Lalith Bharadwaj Baru">
-<meta property="og:title" content="Lalith Bharadwaj Baru">
-<meta property="og:description" content="Professor of Artificial Intelligence">
-<meta property="og:updated_time" content="2030-06-01T13:00:00+00:00">
+          var allstr = $(this).text();
+          if (allstr.length > carLmt) {
+              var firstSet = allstr.substring(0, carLmt);
+              var secdHalf = allstr.substring(carLmt, allstr.length);
+              var strtoadd = firstSet + "<span class='SecSec'>" + secdHalf + "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt + "</span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "</span>";
+              $(this).html(strtoadd);
+          }
 
-<title>Lalith Bharadwaj Baru</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-<script src=/js/wowchemy-init.min.7f3e7639f4c7f2a2cf83b68ea7de7f08.js></script>
+      });
+      //Read More and Read Less Click Event binding
+      $(document).on("click", ".readMore,.readLess", function() {
+          $(this).closest(".addReadMore").toggleClass("showlesscontent showmorecontent");
+      });
+  }
+  $(function() {
+      //Calling function after Page Load
+      AddReadMore();
+  });
+  </script>
+  <style>
+  .addReadMore.showlesscontent .SecSec,
+  .addReadMore.showlesscontent .readLess {
+      display: none;
+  }
+
+  .addReadMore.showmorecontent .readMore {
+      display: none;
+  }
+
+  .addReadMore .readMore,
+  .addReadMore .readLess {
+      font-weight: bold;
+      margin-left: 4px;
+      color: #fb8500;
+      cursor: pointer;
+  }
+
+  .addReadMoreWrapTxt.showmorecontent .SecSec,
+  .addReadMoreWrapTxt.showmorecontent .readLess {
+      display: block;
+  }
+  </style>
+
 
 </head>
 
+<body id="page-top">
 
-
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
-
-
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-    <div class="container">
-      
-      
-      <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" style="font-family: 'Dancing Script', cursive; font-size: 2rem; " href="/">Lalith Bharadwaj Baru</a>
-      </div>
-      
-      
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-      data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fas fa-bars"></i></span>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="/">
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/lalith.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    
-    
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Lalith Bharadwaj Baru</a>
-    </div>
-    
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
-      
-      
-      <ul class="navbar-nav d-md-inline-flex">
-        
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
+          <a class="nav-link js-scroll-trigger" href="/#about">About</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link " href="/files/publication.html"><span>Publications</span></a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link " href="/files/projects.html"><span>Projects</span></a>
+          <a class="nav-link js-scroll-trigger" href="/#education">Education</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link " href="/files/resume.html"> <span>Resume</span></a>
+          <a class="nav-link js-scroll-trigger" href="/#experience">Experience</a>
         </li>
-        
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#researchinterests">Research Interests</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#technicalskills">Technical Skills</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#papers">Papers</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#presentations">Presentations</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#other_interest">Other Interest</a>
+        </li>
+
       </ul>
-      
-      
     </div>
+  </nav>
+
+  <div class="container-fluid ">
     
-  </div>
-</nav>
-
-
-<section id=top data-spy=scroll data-target=#navbar-main >
-<div class=page-header>
-</div>
-<div class=page-body>
-<span class="js-widget-page d-none"></span>
-<section id=bio class="home-section wg-about-avatar dark">
-<div class="home-section-bg bg-image" style=background-image:url(https://hugo-researcher.netlify.app/media/hello_huf5ef9993f1928f67fc0b32a30eb0e409_396241_1920x1920_fit_q75_h2_lanczos.webp);background-size:cover;background-position:50%;filter:brightness(.6)>
-</div>
-<div class=container>
-<div id=profile>
-<img class="avatar avatar-circle" src=/images/avatar_hu47c45e51dbe5de8e005c29f88715d95c_7091_150x150_fill_q75_lanczos_center.jpg alt="Nelson Bighetti">
-<div class=portrait-title>
-<h2>Lalith Bharadwaj Baru</h2>
-<h3>Professor of Artificial Intelligence</h3>
-<h3>
-<span>Stanford University</span>
-</h3>
-</div>
-<ul class=network-icon aria-hidden=true>
-<li>
-<a href=/#contact aria-label=envelope>
-<i class="fas fa-envelope big-icon"></i>
-</a>
-</li>
-
-<li>
-<a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target=_blank rel=noopener aria-label=google-scholar>
-<i class="ai ai-google-scholar big-icon"></i>
-</a>
-</li>
-<li>
-<a href=https://github.com/gcushen target=_blank rel=noopener aria-label=github>
-<i class="fab fa-github big-icon"></i>
-</a>
-</li>
-<li>
-<a href=/media/resume.pdf aria-label=cv>
-<i class="ai ai-cv big-icon"></i>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-
-<section id=mission class="home-section wg-blank">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Mission</h1>
-</div>
-<div class=col-12>
-<p>Use this area to speak to your mission. I&rsquo;m a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.</p>
-<p><strong>Specialties:</strong> Analytics & Data, Leadership, Programming, Strategic Planning, Writing & Editing</p>
-</div>
-</div>
-</div>
-</section>
-<section id=featured class="home-section wg-featured">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Featured Publications</h1>
-</div>
-<div class=col-12>
-<div class=card-simple>
-<div class=article-metadata>
-<div>
-<span>
-Nelson Bighetti</span>, <span>
-Robert Ford</span>
-</div>
-<span class=article-date>
-July 2013
-</span>
-<span class=middot-divider></span>
-<span class=pub-publication>
-In <em>STC</em>
-</span>
-</div>
-<a href=/publication/conference-paper/>
-<div class=img-hover-zoom><img src=/publication/conference-paper/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_808x455_fill_q75_lanczos_smart1.jpg class=article-banner alt="An example conference paper" loading=lazy></div>
-</a>
-<div class="section-subheading article-title mb-1 mt-3">
-<a href=/publication/conference-paper/>An example conference paper</a>
-</div>
-<a href=/publication/conference-paper/ class=summary-link>
-<div class=article-style>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.</p>
-</div>
-</a>
-<div class=btn-links>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf target=_blank rel=noopener>
-PDF
-</a>
-<a href=# class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename=/publication/conference-paper/cite.bib>
-Cite
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Code
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Dataset
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Poster
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/slides/example/ target=_blank>
-Slides
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Video
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Source Document
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=http://example.org target=_blank rel=noopener>
-Custom Link</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=publications class="home-section wg-pages">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Recent Publications</h1>
-</div>
-<div class=col-12>
-<div class=pub-list-item style=margin-bottom:1rem>
-<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author">
-<span>
-Nelson Bighetti</span>
-</span>
-(2019).
-<a href=/publication/preprint/>An example preprint / working paper</a>.
-<p>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=http://arxiv.org/pdf/1512.04133v1 target=_blank rel=noopener>
-PDF
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Code
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Dataset
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Poster
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/slides/example/ target=_blank>
-Slides
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Video
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/# target=_blank rel=noopener>
-Source Document
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=http://example.org target=_blank rel=noopener>
-Custom Link</a>
-</p>
-</div>
-<div class=pub-list-item style=margin-bottom:1rem>
-<i class="far fa-file-alt pub-icon" aria-hidden=true></i>
-<span class="article-metadata li-cite-author">
-<span>
-Nelson Bighetti</span><i class="author-notes fas fa-info-circle" data-toggle=tooltip title="Equal contribution"></i>, <span>
-Robert Ford</span><i class="author-notes fas fa-info-circle" data-toggle=tooltip title="Equal contribution"></i>
-</span>
-(2015).
-<a href=/publication/journal-article/>An example journal article</a>.
-<em>Journal of Source Themes, 1</em>(1).
-<p>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=http://arxiv.org/pdf/1512.04133v1 target=_blank rel=noopener>
-PDF
-</a>
-<a href=# class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename=/publication/journal-article/cite.bib>
-Cite
-</a>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/slides/example/ target=_blank>
-Slides
-</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=talks class="home-section wg-pages">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Talks</h1>
-</div>
-<div class=col-12>
-<div class="media stream-item">
-<div class=media-body>
-<div class="section-subheading article-title mb-0 mt-0">
-<a href=/talk/example-talk/>Example Talk</a>
-</div>
-<a href=/talk/example-talk/ class=summary-link>
-<div class=article-style>
-An example talk using Wowchemy&rsquo;s Markdown slides feature.
-</div>
-</a>
-<div class="stream-meta article-metadata">
-<div>
-<span>
-Jun 1, 2030 1:00 PM &mdash; 3:00 PM
-</span>
-<span class=middot-divider></span>
-<span>Wowchemy HQ</span>
-</div>
-</div>
-<div class=btn-links>
-<a class="btn btn-outline-primary btn-page-header btn-sm" href=/slides/example/ target=_blank>
-Slides
-</a>
-</div>
-</div>
-<div class=ml-3>
-<a href=/talk/example-talk/>
-<img src=/talk/example-talk/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_lanczos.jpg alt="Example Talk" loading=lazy>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=experience class="home-section wg-experience">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Experience</h1>
-</div>
-<div class=col-12>
-<div class="row experience">
-<div class="col-auto text-center flex-column d-none d-sm-flex">
-<div class="row h-50">
-<div class=col>&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-<div class=m-2>
-<span class="badge badge-pill border exp-fill">&nbsp;</span>
-</div>
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-</div>
-<div class="col py-2">
-<div class=card>
-<div class=card-body>
-<div class="d-flex align-content-start">
-<div class="mr-2 mb-2"><img src=/media/icons/brands/org-gc.svg width=56px height=56px alt=GenCoin></div>
-<div>
-<div class="section-subheading card-title exp-title text-muted my-0">CEO</div>
-<div class="section-subheading card-title exp-company text-muted my-0">GenCoin</div>
-<div class="text-muted exp-meta">
-Jan 2021 –
-Present
-<span class=middot-divider></span>
-<span>California</span>
-</div>
-</div>
-</div>
-<div class=card-text><p>Responsibilities include:</p>
-<ul>
-<li>Analysing</li>
-<li>Modelling</li>
-<li>Deploying</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row experience">
-<div class="col-auto text-center flex-column d-none d-sm-flex">
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-<div class=m-2>
-<span class="badge badge-pill border">&nbsp;</span>
-</div>
-<div class="row h-50">
-<div class=col>&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-</div>
-<div class="col py-2">
-<div class=card>
-<div class=card-body>
-<div class="d-flex align-content-start">
-<div class="mr-2 mb-2"><img src=/media/icons/brands/org-x.svg width=56px height=56px alt="University X"></div>
-<div>
-<div class="section-subheading card-title exp-title text-muted my-0">Professor of Semiconductor Physics</div>
-<div class="section-subheading card-title exp-company text-muted my-0">University X</div>
-<div class="text-muted exp-meta">
-Jan 2016 –
-Dec 2020
-<span class=middot-divider></span>
-<span>California</span>
-</div>
-</div>
-</div>
-<div class=card-text>Taught electronic engineering and researched semiconductor physics.</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=education class="home-section wg-experience">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Education</h1>
-</div>
-<div class=col-12>
-<div class="row experience">
-<div class="col-auto text-center flex-column d-none d-sm-flex">
-<div class="row h-50">
-<div class=col>&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-<div class=m-2>
-<span class="badge badge-pill border exp-fill">&nbsp;</span>
-</div>
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-</div>
-<div class="col py-2">
-<div class=card>
-<div class=card-body>
-<div class="section-subheading card-title exp-title text-muted my-0">PhD Electronic Engineering</div>
-<div class="section-subheading card-title exp-company text-muted my-0">University X</div>
-<div class="text-muted exp-meta">
-Jan 2017 –
-Present
-<span class=middot-divider></span>
-<span>California</span>
-</div>
-<div class=card-text>Contributed some novel ideas in scientific papers.</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row experience">
-<div class="col-auto text-center flex-column d-none d-sm-flex">
-<div class="row h-50">
-<div class="col border-right">&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-<div class=m-2>
-<span class="badge badge-pill border">&nbsp;</span>
-</div>
-<div class="row h-50">
-<div class=col>&nbsp;</div>
-<div class=col>&nbsp;</div>
-</div>
-</div>
-<div class="col py-2">
-<div class=card>
-<div class=card-body>
-<div class="section-subheading card-title exp-title text-muted my-0">MEng Electronic Engineering</div>
-<div class="section-subheading card-title exp-company text-muted my-0">University X</div>
-<div class="text-muted exp-meta">
-Jan 2016 –
-Dec 2016
-<span class=middot-divider></span>
-<span>California</span>
-</div>
-<div class=card-text>Specialized in semiconductor physics.</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id=accomplishments class="home-section wg-accomplishments">
-<div class=home-section-bg>
-</div>
-<div class=container>
-<div class="row justify-content-center">
-<div class="section-heading col-12 mb-3 text-center">
-<h1 class=mb-0>Accomplishments</h1>
-</div>
-<div class=col-12>
-<div class="card experience course">
-<div class=card-body>
-<div class="d-flex align-content-start">
-<div class="mr-2 mb-2"><a href=https://www.coursera.org target=_blank rel=noopener><img src=/media/icons/brands/coursera.svg width=56px height=56px alt=Coursera></a></div>
-<div>
-<div class="section-subheading card-title exp-title text-muted my-0">Neural Networks and Deep Learning</div><div class="card-subtitle my-0 article-metadata"><a href=https://www.coursera.org target=_blank rel=noopener>Coursera</a><span class=middot-divider></span>
-Oct 2018
-</div>
-</div>
-</div>
-<a class=card-link href=https://www.coursera.org target=_blank rel=noopener>
-See certificate
-</a>
-</div>
-</div>
-<div class="card experience course">
-<div class=card-body>
-<div class="d-flex align-content-start">
-<div class="mr-2 mb-2"><a href=https://www.edx.org target=_blank rel=noopener><img src=/media/icons/brands/edx.svg width=56px height=56px alt=edX></a></div>
-<div>
-<a href=https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals target=_blank rel=noopener><div class="section-subheading card-title exp-title text-muted my-0">Blockchain Fundamentals</div></a><div class="card-subtitle my-0 article-metadata"><a href=https://www.edx.org target=_blank rel=noopener>edX</a><span class=middot-divider></span>
-Mar 2018
-</div>
-</div>
-</div>
-<div class=card-text>Formulated informed blockchain models, hypotheses, and use cases.</div>
-<a class=card-link href=https://www.edx.org target=_blank rel=noopener>
-See certificate
-</a>
-</div>
-</div>
-<div class="card experience course">
-<div class=card-body>
-<div class="d-flex align-content-start">
-<div class="mr-2 mb-2"><a href=https://www.datacamp.com target=_blank rel=noopener><img src=/media/icons/brands/datacamp.svg width=56px height=56px alt=DataCamp></a></div>
-<div>
-<div class="section-subheading card-title exp-title text-muted my-0">Object-Oriented Programming in R: S3 and R6 Course</div><div class="card-subtitle my-0 article-metadata"><a href=https://www.datacamp.com target=_blank rel=noopener>DataCamp</a><span class=middot-divider></span>
-Jul 2017
-– Dec 2017
-</div>
-</div>
-</div>
-<a class=card-link href=https://www.datacamp.com target=_blank rel=noopener>
-See certificate
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-
-<section id="contact" class="home-section wg-contact">
-  <div class="container-fluid">
-
-    <div class="row contact-widget">
-      <div class="col-12 col-lg-4 section-heading">
-        <h1 style="font-family: Segoe UI; ">Contact</h1>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-
-        <div class="row contact-widget mr-5 ml-5">
-        <div class="col-12 col-lg-12 ml-4">
-            <img src="images/shilhora_akshay_signature.png" alt="signature" />
-            <ul class="fa-ul">
-            <li>
-                <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-                <span id="person-email"><a
-                    >shilhora.akshay333@gmail.com</a></span>
-            </li>
-            <li>
-                <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-                <span id="person-telephone"><a href="tel:&#43;1%20%28250%29%20899%206971">&#43;91 6281459424</a></span>
-            </li>
-            <li>
-                <i class="fa-li fas fa-location-arrow fa-2x" aria-hidden="true"></i>
-                <span id="person-telephone">Address: Hyderabad, Telangana, India</span>
-            </li>
-            <li>
-                <i class="fa-li fab fa-linkedin fa-2x" aria-hidden="true"></i>
-                <a href="https://www.linkedin.com/in/shilhora-akshay-patel-0930a1147" target="_blank" rel="noopener">Contact Me</a>
-            </li>
-            </ul>
-        </div>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-20">
+        <h1 class="mb-3">Lalith Bharadwaj Baru</h1>
+        <div class="subheading mb-3">
+          <a href="mailto:fchollet@google.com">lalithbharadwaj313@gmail.com</a>
         </div>
 
-        <div class="col-12 col-lg-6 ml-5">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.342303692277!2d78.3841044148785!3d17.538882087987954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8e0ab28e0975%3A0x7b048b2858fdee94!2sVallurupalli%20Nageswara%20Rao%20Vignana%20Jyothi%20Institute%20of%20Engineering%20%26Technology!5e0!3m2!1sen!2sin!4v1643469406243!5m2!1sen!2sin" 
-            width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="social-icons">
+          <a href="https://twitter.com/fchollet">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com/barulalithb" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/fchollet">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
 
-    </div>
+        <p class="lead mb-3">A proficient python programmer with a mathematical understanding of deep neural networks and this collective knowledge is applied to provide action-oriented, promising solutions by collaborating and devising a research agenda.</p>
 
-</div>
-<div class="container">
-    <footer class="site-footer">
-  
-  <p class="powered-by">
-      <a href="/privacy/">Privacy Policy</a>
-       &middot; 
-      <a href="/terms/">Terms</a>
-  </p>
-  <p class="powered-by">
-    © Silhora Akshay Patel, 2020
-  </p>
-
-  <p class="powered-by">
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo.</a>
-  </p>
-</footer>
-
-  </div>
-  </div>
-</section>
-
-
-<script src=/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
-<script src=/en/js/wowchemy.min.4273a72ba000ef1d25a1e7f8c1e94110.js></script>
-
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        <p class="lead mb-3 bold">Primary interests:</p>
+        <p>
+          <ul>
+            <li>Trying to understand the human brain and bridge the gap between human and artificial intelligence.</li>
+            <li>Focusing to understand the underlying geometry of data.</li>
+            <li>Aiming to provide solutions in the healthcare and agriculture domain with the help of AI.</li>
+            <li>Initiating, analyzing, and hypothesizing to provide solutions to problems with AI by safeguarding Ethics.</li>
+          </ul>
+        </p>
         
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-lg-5 d-flex justify-content-center" id="education" style="padding: 1rem;">
+      <div class="w-100">
+        <h2 class="">Education</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <div class="box-item">
+              <img class="small-book-cover" src="/img/vnrlogo.png" />
+                <h5>Bachelors of Technology </h5>
+                <h6>Information Technology</h6>
+                <p>VNR Vignana Jyothi Institute of Engineering & Technology</p>
+                <p>July 2017 – July 2021</p>
+                </p>
+              </div>
+            <br/>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="">Experience</h2>
+
+        
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <div class="box-item">
+              <img class="small-book-cover" src="/img/ihublogo.png" />
+                <h5>Research Associate</h5>
+                <h6>IHub-Data</h6>
+                <p>IIIT, Hyderabad</p>
+                <p>2022 May - Present</p>
+                </p>
+              </div>
+            <br/>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <div class="box-item">
+              <img class="small-book-cover" src="/img/zebulogo.jpg" />
+                <h5>Deep Learning Research Intern</h5>
+                <h6>Zebu Intelligent Systems</h6>
+                <p>Gachibowli, Hyderabad</p>
+                <p>2021 Dec - 2022 April</p>
+                </p>
+              </div>
+            <br/>
+          </div>
+        </div>
+
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <div class="box-item">
+              <img class="small-book-cover" src="/img/vnrlogo.png" />
+                <h5>Research Assistant</h5>
+                <h6>Data Mining and Machine Learning Lab</h6>
+                <p>VNR Vignana Jyothi Institute of Engineering & Technology</p>
+                <p>Jul 2019 – Apr 2021</p>
+                </p>
+              </div>
+            <br/>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="researchinterests">
+      <div class="w-100">
+        <h2 class="">Resarch Interests</h2>
+    
+        <div class="row d-flex mt-1 mb-1">
+
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style="height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;" >Computer Vision</h5>
+              </div>
+              
+          </div>
+  
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style="height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Pattern Recognition</h5>
+            </div>
             
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+          </div>
+  
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">AI Ethics</h5>
+              </div>
+          </div>
+  
+            <div class="col-lg-12">
+              
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Deep Learning</h5>
+              </div>
+          </div>
+  
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px;  margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Machine Learning</h5>
+            </div>
+          </div>
+  
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Neural Networks</h5>
+            </div>
+          </div>
+  
+  
+        </div>
+
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="technicalskills">
+      <div class="w-100">
+        <h2 class="">Technical Skills</h2>
     
+        <div class="row d-flex mt-1 mb-1">
+
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style="height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Python</h5>
+              </div>
+              
+          </div>
+  
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style="height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Pandas</h5>
+            </div>
+            
+          </div>
+  
+          <div class="col-lg-12">
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Numpy</h5>
+              </div>
+          </div>
+  
+            <div class="col-lg-12">
+              
+              <div style="display: flex; justify-content: left;  align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Matplotlib, Seaborn</h5>
+              </div>
+          </div>
+  
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px;  margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Skit-Learn</h5>
+            </div>
+          </div>
+  
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Keras</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Tensorflow</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">Pytorch</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div style="display: flex; justify-content: left; align-items: center;" class="icon-wrapper">
+                <img style=" height: 28px; width: 28px; margin-right: 1rem;" src="/img/checked.png" alt="Podcast Icon" loading="lazy">
+                <h5 style="color: #fff; font-weight: 600;">LaTex</h5>
+              </div>
+            </div>
+  
+  
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="papers">
+      <div class="w-100">
+        <h2 class="">Papers</h2>
+
+        <div class="row">
+          
+          <!-- Improvising the Learning of Neural Networks on Hyperspherical Manifold -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Improvising the Learning of Neural Networks on Hyperspherical Manifold</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                        The impact of convolution neural networks (CNNs) in the supervised settings provided tremendous increment in
+                        performance.
+                        The representations learned from CNN's operated on hyperspherical manifold led to insightful outcomes in
+                        face recognition, face identification and other supervised tasks.
+                        A broad range of activation functions is developed with hypersphere intuition which performs superior to
+                        softmax in euclidean space.
+                        The main motive of this research is to provide insights. First, the stereographic projection is implied to
+                        transform data from Euclidean space (R^n) to hyperspherical manifold (S^n) to analyze the performance of
+                        angular margin losses.
+                        Secondly, proving both theoretically and practically that decision boundaries constructed on hypersphere
+                        using stereographic projection obliges the learning of neural networks.
+                        Experiments have proved that applying stereographic projection on existing state-of-the-art angular margin
+                        objective functions led to improve performance for standard image classification data sets (CIFAR-10,100).
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span><b>Lalith Bharadwaj Baru</b></span>, <span> Shilhora Akshay Patel</span>, <span>Sai Vardhan Kanumolu</span>,<span>G Madhu</span>,
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2109.14746.pdf" target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Improvising+the+Learning+of+Neural+Networks+on+Hyperspherical+Manifold&btnG="
+                    target="_blank"
+                    >
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/barulalithb/stereo-angular-margin"
+                    target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Stacked Ensemble Learning Model for COVID-19 Classification -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Deep Stacked Ensemble Learning Model for COVID-19 Classification</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                      COVID-19 is a growing problem worldwide with a high mortality rate. As a result, the World Health Organization (WHO) declared it a pandemic. 
+                      In order to limit the spread of the disease, a fast and accurate diagnosis is required. A reverse transcript polymerase chain reaction (RT-PCR) 
+                      test is often used to detect the disease. However, since this test is time-consuming, a chest computed tomography (CT) or plain chest X-ray (CXR) is 
+                      sometimes indicated. The value of automated diagnosis is that it saves time and money by minimizing human effort. Three significant contributions are 
+                      made by our research. Its initial purpose is to use the essential finetuning methodology to test the action and efficiency of a variety of vision models, 
+                      ranging from Inception to Neural Architecture Search (NAS) networks. Second, by plotting class activation maps (CAMs) for individual networks and assessing 
+                      classification efficiency with AUC-ROC curves, the behavior of these models is visually analyzed. Finally, stacked ensembles techniques were used 
+                      to provide greater generalization by combining finetuned models with six ensemble neural networks. Using stacked ensembles, the generalization of 
+                      the models improved. Furthermore, the ensemble model created by combining all of the finetuned networks obtained a state-of-the-art COVID-19 accuracy 
+                      detection score of 99.17%. The precision and recall rates were 99.99% and 89.79%, respectively, highlighting the robustness of stacked ensembles. 
+                      The proposed ensemble approach performed well in the classification of the COVID-19 lesions on CXR according to the experimental results.
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>G. Madhu</span>, <span><b>B. Lalith Bharadwaj</b></span>, <span>Rohit Boddeda</span>, <span> Sai Vardhan</span>, <span>K. Sandeep Kautish</span>, <span>Khalid Alnowibet</span>, 
+                    <span>Adel F. Alrasheedi</span>, <span>Ali Wagdy Mohamed</span>
+                    <span><b>Lalith Bharadwaj Baru</b></span>, <span> Shilhora Akshay Patel</span>, <span>Sai Vardhan Kanumolu</span>,<span>G Madhu</span>,
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=" https://www.techscience.com/cmc/v70n3/44964/pdf" target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?q=Deep+Stacked+Ensemble+Learning+Model+for+COVID-19+Classification&hl=en&as_sdt=0&as_vis=1&oi=scholart"
+                    target="_blank"
+                    >
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" 
+                    target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <!-- Plant Disease Classification Using Deep Bilinear CNN -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Plant Disease Classification Using Deep Bilinear CNN</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                      Plant diseases have become a major threat in farming and provision of food. Various plant diseases have affected the natural growth of the plants and the infected plants are the leading factors for loss of crop production. The manual detection and identification of the plant diseases require a careful and observative examination through expertise. 
+                      To overcome manual testing procedures an automated identification and detection can be implied which provides faster, scalable and precisive solutions. In this research, 
+                      the contributions of our work are threefold. Firstly, a bi-linear convolution neural network (Bi-CNNs) for plant leaf disease identification and classification is proposed. 
+                      Secondly, we fine-tune VGG and pruned ResNets and utilize them as feature extractors and connect them to fully connected dense networks. The hyperparameters are tuned to reach 
+                      faster convergence and obtain better generalization during stochastic optimization of Bi-CNN (s). Finally, the proposed model is designed to leverage scalability by implying the 
+                      Bi-CNN model into a real-world application and release it as an open-source. The model is designed on variant testing criteria ranging from 10% to 50%. These models are evaluated on 
+                      gold-standard classification measures. To study the performance, testing samples were expanded by 5x (ie, from 10% to 50%) and it is found that the deviation in the accuracy was quite low (0.27%) 
+                      which resembles the consistent generalization ability. Finally, the larger model obtained an accuracy score of 94.98% for 38 distinct classes.
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>D Srinivasa Rao</span>, <span>Ramesh Babu Ch</span>, <span> V Sravan Kiran</span>, <span>N Rajasekhar</span>, <span>Kalyanapu Srinivas</span>, 
+                    <span> P Shilhora Akshay</span>, <span>G Sai Mohan</span>, <span><b>B. Lalith Bharadwaj</b></span>,
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/355118767_Plant_Disease_Classification_Using_Deep_Bilinear_CNN/links/61674a1e66e6b95f07c31af9/Plant-Disease-Classification-Using-Deep-Bilinear-CNN.pdf" target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Plant+Disease+Classification+Using+Deep+Bilinear+CNN&btnG="
+                    target="_blank"
+                    >
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+          
+          <!-- An Attention Based Neural Architecture for Arrhythmia Detection and Classification from ECG Signals -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">An Attention Based Neural Architecture for Arrhythmia Detection and Classification from ECG Signals</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                      COVID-19 is a growing problem worldwide with a high mortality rate. As a result, the World Health Organization (WHO) declared it a pandemic. 
+                      In order to limit the spread of the disease, a fast and accurate diagnosis is required. A reverse transcript polymerase chain reaction (RT-PCR) 
+                      test is often used to detect the disease. However, since this test is time-consuming, a chest computed tomography (CT) or plain chest X-ray (CXR) is 
+                      sometimes indicated. The value of automated diagnosis is that it saves time and money by minimizing human effort. Three significant contributions are 
+                      made by our research. Its initial purpose is to use the essential finetuning methodology to test the action and efficiency of a variety of vision models, 
+                      ranging from Inception to Neural Architecture Search (NAS) networks. Second, by plotting class activation maps (CAMs) for individual networks and assessing 
+                      classification efficiency with AUC-ROC curves, the behavior of these models is visually analyzed. Finally, stacked ensembles techniques were used 
+                      to provide greater generalization by combining finetuned models with six ensemble neural networks. Using stacked ensembles, the generalization of 
+                      the models improved. Furthermore, the ensemble model created by combining all of the finetuned networks obtained a state-of-the-art COVID-19 accuracy 
+                      detection score of 99.17%. The precision and recall rates were 99.99% and 89.79%, respectively, highlighting the robustness of stacked ensembles. 
+                      The proposed ensemble approach performed well in the classification of the COVID-19 lesions on CXR according to the experimental results.
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Nimmala Mangathayaru</span>,<span>Padmaja Rani</span>, <span> Vinjamuri Janaki</span>, <span>Kalyanapu Srinivas</span>,<span>B Mathura Bai</span>, 
+                    <span>G Sai Mohan</span>, <span><b>B. Lalith Bharadwaj</b></span>, 
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.researchgate.net/publication/355175901_An_Attention_Based_Neural_Architecture_for_Arrhythmia_Detection_and_Classification_from_ECG_Signals" target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.com/scholar?cluster=12991130597422506949&hl=en&as_sdt=2005"
+                    target="_blank">
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"  target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <!-- Convolutional Siamese networks for one-shot malaria parasite recognition in microscopic images -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Convolutional Siamese networks for one-shot malaria parasite recognition in microscopic images</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                      Malaria is a life-threatening, mosquito-borne disease caused by a Plasmodium parasite that is commonly spread to humans from the bite of Anopheles mosquitoes. 
+                      It is widespread across the world, particularly in tropical regions, and if not treated in time, it can be deadly. Thus, early and effective treatment and diagnosis of malaria will save lives. 
+                      Modern machine learning and image analysis methods are practiced on microscopic images of blood smears by using hand-crafted features that need expertise in interpreting these features. 
+                      In contrast, convolutional neural networks (CNNs) have proved to be adequate in feature extraction and classification of parasite detection toward malaria diagnosis. 
+                      CNNs' techniques can extract highly influenced features, determine filters to serve as an effective prediction that provides an accurate detection to aid malaria diagnosis. 
+                      The motivation of the research is to state the significance of deep learning techniques in the diagnosis of malaria. 
+                      This research proposes the convolution Siamese network (CSN) for a one-shot recognition method for parasite recognition in microscopic images. 
+                      In this study, microscopic images were used to examine the performance of the CSN model, and it will assist in diagnosing various infectious diseases rapidly. 
+                      CSN is implemented in a two-phase criteria to detect similarity or dissimilarity. The first phase consists of extracting detailed features using a fully connected convolutional block and the second phase consists of a similarity check where inputs are discriminated with similarity measures (L1, L2). 
+                      This discriminated feature is fed forward to the final layer with a sigmoid function that depicts whether it is similar to the given input. 
+                      Further, the proposed model is evaluated to attain optimum generalization, and its performance is captured by splitting data into identical divisions (50–50). 
+                      As the model is trained only on half the malaria blood samples, it gives precisive generalization and attains malaria test accuracy scores of 87.10% and 87.38% with L1 and L2, respectively. 
+                      We also depicted the mean square error (MSE) rate and confusion matrix for each to incorporate the performance for similar and dissimilar identification individually. 
+                      The evolution of these metrics described the stability of the proposed network. 
+                      Experiments and results have proven that the proposed CSN can leverage performance and build comprehensive models with fewer samples. 
+                      The obtained result shows the potential of the Siamese network in the field of medical diagnostic tools. 
+                      This research is the first study to construct and assess the Siamese network diagnostic model toward malaria diagnosis.
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Nimmala Mangathayaru</span>,<span>Padmaja Rani</span>, <span> Vinjamuri Janaki</span>, <span>Kalyanapu Srinivas</span>,<span>B Mathura Bai</span>, 
+                    <span>G Sai Mohan</span>, <span><b>B. Lalith Bharadwaj</b></span>, 
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"  target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Convolutional+Siamese+networks+for+one-shot+malaria+parasite+recognition+in+microscopic+images&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"  target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <!-- An Imperative Diagnostic Framework for PPG Signal Classification Using GRU -->
+          <div  class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+    
+              <div class="mr-3">
+                  <img
+                    style="height: 140px; width:110px; margin-right: 4px;"
+                    src="/img/paper.png"
+                    alt="Evaluating ">
+              </div>
+    
+            <div class="media-body" >
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">An Imperative Diagnostic Framework for PPG Signal Classification Using GRU</a>
+                </h3>
+    
+                <div style="width: 95%;">
+                    <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                      Cardiovascular disease are one of the leading causes of an increase in the mortality rate due to irregular heart beats.
+                      Photoplethysmogram (PPG) technique is one of the noninvasive evaluation of blood pressure (BP) offers a reliable,
+                      feasible, and cost-efficient solution than other conventional techniques. PPG technique is highly induced by motion
+                      artifacts and its characteristics depend on the physiological condition of the person. While the collection of data, the
+                      PGG must be calibrated. In this research, a novel approach using a dual-tree complex wavelet transform (DT-CWT) based
+                      feature extraction technique with GRU network for the classification of hypertension is proposed. DT-CWT gives shift
+                      invariance compared to Continuous wavelet transforms and dual tree structure helps to extract the real and imaginary
+                      coefficients of the features. DT-CWT helps to integrate the signal patterns even disintegrating them during testing
+                      procedure. Further, these extracted features are fed into a variant neural architecture consisting of sequential GRU
+                      layers stacked over fully connected dense layers. It is observed, utilizing GRU layers led to extract precise features
+                      for sequential signal data by out-performing existing models. The proposed model attained an state-of-the-art accuracy
+                      score of 98.82% on BIDMC-PGG dataset by overhauling existing loops in research.
+                    </p>
+                </div>
+    
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Nimmala Mangathayaru</span>,<span>Padmaja Rani</span>, <span> Vinjamuri Janaki</span>, <span>Kalyanapu Srinivas</span>,<span>B Mathura Bai</span>, 
+                    <span>G Sai Mohan</span>, <span><b>B. Lalith Bharadwaj</b></span>, 
+                  </div>
+                </div>
+    
+                <div class="btn-links mt-1">
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=" https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/352541826_An_Imperative_Diagnostic_Framework_for_PPG_Signal_Classification_Using_GRU/links/6167498f66e6b95f07c31ae9/An-Imperative-Diagnostic-Framework-for-PPG-Signal-Classification-Using-GRU.pdf" target="_blank"
+                    rel="noopener">
+                    PDF
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=An+Imperative+Diagnostic+Framework+for+PPG+Signal+Classification+Using+GRU&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+    
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"  target="_blank">
+                    Code
+                  </a>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <!-- Deep Bi-linear Convolution Neural Network for Plant Disease Identification and Classification -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+          
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+          
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Deep Bi-linear Convolution Neural Network for Plant Disease Identification and Classification</a>
+                </h3>
+          
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                    Plant diseases that occur through various sources is a threat which causes a huge loss in production of farming.
+                    Detection of infected plants is necessary to take required preventive measures to protect the plant and preserve it. As
+                    manual identification of the disease requires expertise to determine the pathological status of the plant regarding the
+                    infection levels. So, automated identification is preferred by driving human-level intelligence to the machine using
+                    deep-vision approaches to provide fast, reliable and accurate solutions.
+                    
+                    In this research, automated identification and classification of 9 distinct plant-leaves with healthy and infection
+                    classes is developed using Bi-Linear Convolution Neural Network (Bi-CNN’s). This neural architecture is constructed
+                    inspiring from the visual perception of the human brain with two cortical pathways. The hyperparameters are fine-tuned
+                    by the scheduling training procedure to attain faster convergence. The model is generalized on a triad of testing splits
+                    ranging from 10 to 50%. This model is evaluated on various standard classification metrics and when testing samples are
+                    increased by 5x (i.e. from 10 to 50%) the deviation in the accuracy score is very minute (0.27%) which resembles the
+                    resilience to unseen samples. The AUC obtained for all the models for variant test samples is at least 99.92%.
+                  </p>
+                </div>
+          
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Ch Ramesh Babu</span>,<span>Srinivasa Rao Dammavalam</span>, <span> V. Sravan Kiran</span>, <span>N. Rajasekhar</span>,
+                    <span><b>B. Lalith Bharadwaj</b></span>, <span>Rohit Boddeda</span>,
+                    <span>K. Sai Vardhan</span>, 
+                  </div>
+                </div>
+          
+                <div class="btn-links mt-1">
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://link.springer.com/chapter/10.1007/978-981-16-3660-8_28"
+                    target="_blank" rel="noopener">
+                    PDF
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Deep+Bi-linear+Convolution+Neural+Network+for+Plant+Disease+Identification+and+Classification&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+          
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+
+          <!-- An Imperative Diagnostic Model for Predicting CHD using Deep Learning -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+          
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+          
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">An Imperative Diagnostic Model for Predicting CHD using Deep Learning</a>
+                </h3>
+          
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                    Coronary heart disease (CHD) is one of the leading
+                    cause of an increase in the mortality rate. Various factors are
+                    influencing to estimate the presence of CHD in an individual
+                    biologically. We made inferences with these influencing factors
+                    and their peculiarity by analyzing with a various set of algorithms
+                    which help in obtaining a precisive decision support system for
+                    the presence of CHD in an individual. We considered a set of
+                    linear models (Logistic Regression, Linear Discriminant Analysis),
+                    Naive Bayes, Classification and Regression Trees (CART), Support
+                    Vector Machines (SVM). K-Nearest Neighbor (k-NN) for k=1 to 21.
+                    Next, we have considered a set of ensemble models. Furtherly, we
+                    computed a Multi-Layer Perceptron (MLP) and a Deep Neural
+                    Network to evaluate the performance through a deep learning
+                    approach. So, with this analysis, we found a linear model (Logistic
+                    Regression) tend to give on par results both in the case of Cleveland
+                    as well as Framingham dataset. This analysis led to design an
+                    intuitive approach for CHD classification and would give insights
+                    on how to use them in the medical research field.
+                  </p>
+                </div>
+          
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Nimmala Mangathayaru</span>,<span>Padmaja Rani</span>, <span> Vinjamuri Janaki</span>, 
+                    <span>G Sai Mohan</span>, <span>Shilhora Akshay Patel</span>, <span><b>B. Lalith Bharadwaj</b></span>,
+                  </div>
+                </div>
+          
+                <div class="btn-links mt-1">
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href=" https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/348167422_An_Imperative_Diagnostic_Model_for_Predicting_CHD_using_Deep_Learning/links/5ff4650ea6fdccdcb82f07e6/An-Imperative-Diagnostic-Model-for-Predicting-CHD-using-Deep-Learning.pdf" target="_blank" rel="noopener">
+                    PDF
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href=" https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=An+Imperative+Diagnostic+Model+for+Predicting+CHD+using+Deep+Learning&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+          
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+          <!-- Capsule Networks for Malaria Parasite Classification: An Application Oriented Model -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Capsule Networks for Malaria Parasite Classification: An Application Oriented Model</a>
+                </h3>
+
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                    The epidemic of malaria is a death-dealing infectious
+                    disease caused by mosquito spreading across the world. In this
+                    technological era, automated diagnosis is worthwhile for accurate
+                    and faster solutions. In this work, a novel application-oriented diagnostic model was deployed to detect and classify
+                    thin-blood smear
+                    images infected with malaria. The Features from thin-blood smears
+                    are extracted using a series of Convolution-Neural-Networks and
+                    classified with novel Capsule-Networks by understanding the spatial
+                    relationship of thin-blood films. The experimentation is compared
+                    to VGG-16, ResNet-50, DenseNet-121 architectures with immense
+                    depth varying from 16 to 121 layers. The proposed Capsule-Network
+                    is 8 layer deep and tends to outperform attaining classification
+                    accuracy of 96.9% and specificity, sensitivity scores were 94.95%,
+                    98.18%. This novel model was deployed as a web-application to act
+                    as an aid for such a havoc problem and to transfer applicability to
+                    every user in need by classifying images in less than 3 seconds.
+                  </p>
+                </div>
+
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>G. Madhu</span>,<span>A. Govardhan</span>, <span> B. Sunil Srinivas</span>,
+                    <span>Shilhora Akshay Patel</span>, <span>B. Rohit</span>, <span><b>B. Lalith Bharadwaj</b></span>,
+                  </div>
+                </div>
+
+                <div class="btn-links mt-1">
+
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/348166574_Capsule_Networks_for_Malaria_Parasite_Classification_An_Application_Oriented_Model/links/5ff4657a92851c13feebd1fb/Capsule-Networks-for-Malaria-Parasite-Classification-An-Application-Oriented-Model.pdf"
+                    target="_blank" rel="noopener">
+                    PDF
+                  </a>
+
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Capsule+Networks+for+Malaria+Parasite+Classification%3A+An+Application+Oriented+Model&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Leaf Image Classification with the Aid of Transfer Learning: A Deep Learning Approach -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+          
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+          
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">Leaf Image Classification with the Aid of Transfer Learning: A Deep Learning Approach</a>
+                </h3>
+          
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                    Background: Crop diseases are a primary hazard to nutrient safety, which proves to be a serious problem in many places
+                    in the world due to the unavailability of essential aid. Typically agriculturalists or specialists perceive the plants
+                    with a naked eye for detection and identification of an illness. Machine vision models, in specific Convolutional Neural
+                    Networks (CNNs) have directed an impact in feature extraction to a greater extent. Since 2015, numerous solicitations
+                    for the automatic classification and recognition of crop illnesses have been established.
+                    
+                    Methods: In this paper, we proposed, analyzed, and assessed various state-of-the-art models proposed over a decade.
+                    These models are pre-trained with the finest parameters where we modeled a design-oriented method with numerous
+                    leaf-images and classified them into infection and healthy class for each type of leaf independently.
+                    Results: Through our examination, we concluded that VGG models stand-alone with many cited prototypes and give on par
+                    results. As declared, these VGG models (VGG16 and VGG19) are utilized for feature extraction, and further, we augmented
+                    a set of dense layers and train them consequently for classification. The performances of various machine vision
+                    prototypes were pictorially perceived and their sophisticated architecture is not only capable of extracting detailed
+                    features but also repressed many loop-holes. The performance is assessed and computed for several types of leaf images
+                    and the accuracy scores attained were more than 97.5% for VGG16 and 96.72% for VGG19.
+                    Conclusion: AUC-ROC curves were portrayed to illustrate its inspiration in defining an accurate classification where
+                    VGG16 and VGG19 have at least 96.6% and 95% area under the curve (AUC) which resembles their robustness.
+                  </p>
+                </div>
+
+          
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>Srinivasa Rao Dammavalam</span>,<span>Ramesh Babu Challagundla</span>, <span>Vangipuram Sravan Kiran</span>,
+                    <span>SRajasekhar Nuvvusetty</span>,  <span><b>B. Lalith Bharadwaj</b></span>,<span>Rohit Boddeda</span>,<span>Sai Vardhan Kanumolu</span>,
+                  </div>
+                </div>
+          
+                <div class="btn-links mt-1">
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="http://dx.doi.org/10.2174/2665997201999200811150433"
+                    target="_blank" rel="noopener">
+                    PDF
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.com/scholar?cluster=1609806392913401606&hl=en&oi=scholarr"
+                    target="_blank">
+                    Cite
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+          
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+          <!-- A Normalized Mean Algorithm for Imputation of Missing Data Values in Medical Databases -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+          
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+          
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">A Normalized Mean Algorithm for Imputation of Missing Data Values in Medical Databases</a>
+                </h3>
+          
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                    Many medical research databases commonly consist of the missing value problems, and the presence of missing data value
+                    has a negative impact on machine learning models. However, the data with missing value can decrease the classifier
+                    performance and can lead to wrong insights by introducing biases. Imputation approaches are typically employed to impute
+                    the missing data value for data analysis. In addition, imputation helps us to build an effective classification model to
+                    discover hidden patterns which can provide insightful outcomes. In this paper, the normalized mean imputation approach
+                    is designed to fill the missing data value in numerical datasets. After normalizing the data, compute the mean and
+                    cube-root-of-cubic mean. Finally, impute the missing data value from the maximum value of these two methods which are
+                    the plausible data value in a given dataset. In addition, it is observed that after imputation some of the outliers are
+                    also eliminated in a dataset in this approach. The experiments are conducted on benchmark datasets and compared with
+                    mean imputation, median imputation, and mode imputation approaches. The experimental results show that the suggested
+                    imputation technique performed superior results compared with other state-of-the-art methods.
+                  </p>
+                </div>
+          
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>G. Madhu</span>,<span><b>B. Lalith Bharadwaj</b></span>,<span>Sai Vardhan Kanumolu</span>, 
+                    <span>G. Naga Chandrika</span>,
+                    
+                  </div>
+                </div>
+          
+                <div class="btn-links mt-1">
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/340858057_A_Normalized_Mean_Algorithm_for_Imputation_of_Missing_Data_Values_in_Medical_Databases/links/5ef43a6d4585153fb1b3b619/A-Normalized-Mean-Algorithm-for-Imputation-of-Missing-Data-Values-in-Medical-Databases.pdf"
+                    target="_blank" rel="noopener">
+                    PDF
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=A+Normalized+Mean+Algorithm+for+Imputation+of+Missing+Data+Values+in+Medical+Databases&btnG=" target="_blank">
+                    Cite
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+          
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+          <!-- A Novel Algorithm for Missing Data Imputation on Machine Learning -->
+          <div class="col-12 col-lg-12 mb-1 mt-5">
+            <div style="background-color: #002147;" class="media stream-item">
+          
+              <div class="mr-3">
+                <img style="height: 140px; width:110px; margin-right: 4px;" src="/img/paper.png" alt="Evaluating ">
+              </div>
+          
+              <div class="media-body">
+                <h3 class="article-title mb-2 mt-1">
+                  <a id="nipspaper" style="color: #fff700;">A Novel Algorithm for Missing Data Imputation on Machine Learning</a>
+                </h3>
+          
+                <div style="width: 95%;">
+                  <p style="color: #fcfafd;" class="addReadMore showlesscontent">
+                  Missing data value plays a significant role in medical research and its presence causes an adverse effect on machine
+                  learning and AI models which leads to the wrong insights for decision making. Past few decades, researchers have
+                  developed and applied various imputation approaches to real-world applications. In addition, imputation methods help us
+                  to build effective models to discover hidden patterns in medical applications that can provide insightful outcomes for
+                  better decision-making. In this paper, a new approach is proposed to impute the missing data value using XGBoost
+                  (eXtreme Gradient Boosting) of ensemble learning method for continuous attributes in medical datasets. The proposed
+                  methods are continuous type attribute imputations for continuous and discrete data attributes. In this approach, we
+                  impute each missing data attribute value by predicting its data value from non-missing data attributes. The experiments
+                  are conducted on benchmark medical datasets missing values ranging from 1.98% to 50.65% and compared with iterative
+                  imputation, KNN imputation, and missForest imputation. In our study, we observe that missXGBoost can successfully handle
+                  missing data attributes of continuous types of attributes and it outperforms other imputation methods.
+                  </p>
+                </div>
+
+                <div class="stream-meta article-metadata mb-1 mt-1">
+                  <div style="color: #fff700;">
+                    <span>G. Madhu</span>,<span><b>B. Lalith Bharadwaj</b></span>,<span>G. Naga Chandrika</span>, <span>Sai Vardhan Kanumolu</span>,
+          
+                  </div>
+                </div>
+          
+                <div class="btn-links mt-1">
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://www.researchgate.net/profile/B-Lalith-Bharadwaj/publication/339176766_A_Novel_Algorithm_for_Missing_Data_Imputation_on_Machine_Learning/links/5efeffa0a6fdcc4ca4476d0f/A-Novel-Algorithm-for-Missing-Data-Imputation-on-Machine-Learning.pdf"
+                    target="_blank" rel="noopener">
+                    PDF
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                    href="https://scholar.google.co.in/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=A+Novel+Algorithm+for+Missing+Data+Imputation+on+Machine+Learning&btnG="
+                    target="_blank">
+                    Cite
+                  </a>
+          
+                  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" target="_blank">
+                    Code
+                  </a>
+          
+                </div>
+          
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="presentations">
+      <div class="w-100">
+        <h2 class="">Presentations</h2>
+        <br/>
+
+        <h5 class="">conferences</h5>
+        <br/>
+        <p>Oral Presentation at the ICAICR-19, ICSSIT-19.</p>
+        <br/>
+        <p>Oral Presentation at the INOCON-20, ICAICR-20.</p>
+        <br/>
+
+        <h5 class="">Seminars</h5>
+        <br />
+        <p>Guest Lecture in "Neural Networks" at VNR VJIET on behalf of the ACM Student Chapter on the 5th and 6th of
+        November 2021.</p>
+        <br/>
+
+        <h5 class="">Workshop Paper presentation at LMRL NeurIPS21</h5>
+        <br/>
+        <div class="container" style="height: 500px; width: 100%;">
+          <iframe width="100%" height="100%"  src="https://www.youtube.com/embed/BsmlvWRaHCc">
+          </iframe>
+        </div>
+        
+      </div>
+    </section>
 
   
-    <script>const code_highlighting = true;</script>
-    
-    <script>const isSiteThemeDark = false;</script>
-  
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+  <hr class="m-0">
 
 
-  
-  
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="other_interest">
+      <div class="w-100">
+        <h2 class="">Other Interest</h2>
+
+
+        
+      </div>
+    </section>
+
+
+
+
+
+    
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/js/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/js/resume.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143395289-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143395289-1');
+  </script>
 
 </body>
 </html>
