@@ -1246,6 +1246,10 @@ video {
   flex-grow: 1;
 }
 
+.basis-1{
+  flex-basis: 0.25rem;
+}
+
 .basis-1\/2{
   flex-basis: 50%;
 }
@@ -1593,16 +1597,16 @@ video {
   font-family: sen;
 }
 
-.font-Cinzel{
-  font-family: Cinzel;
+.font-\[Didot\]{
+  font-family: Didot;
 }
 
 .font-sen{
   font-family: Sen;
 }
 
-.font-\[Didot\]{
-  font-family: Didot;
+.font-Cinzel{
+  font-family: Cinzel;
 }
 
 .text-2xl{
@@ -1722,6 +1726,11 @@ video {
   color: transparent;
 }
 
+.text-blue-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .text-gray-200{
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1730,11 +1739,6 @@ video {
 .text-blue-400{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-.text-blue-500{
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -2064,13 +2068,13 @@ video {
     background-repeat: no-repeat;
   }
 
-  .\32xl\:px-28{
-    padding-left: 7rem;
-    padding-right: 7rem;
-  }
-
   .\32xl\:px-20{
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .\32xl\:px-28{
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 }
