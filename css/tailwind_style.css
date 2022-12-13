@@ -1593,16 +1593,16 @@ video {
   font-family: sen;
 }
 
-.font-\[Didot\]{
-  font-family: Didot;
-}
-
 .font-Cinzel{
   font-family: Cinzel;
 }
 
 .font-sen{
   font-family: Sen;
+}
+
+.font-\[Didot\]{
+  font-family: Didot;
 }
 
 .text-2xl{
@@ -1657,12 +1657,12 @@ video {
   font-weight: 300;
 }
 
-.font-bold{
-  font-weight: 700;
-}
-
 .font-semibold{
   font-weight: 600;
+}
+
+.font-bold{
+  font-weight: 700;
 }
 
 .uppercase{
@@ -1730,6 +1730,11 @@ video {
 .text-blue-400{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
+.text-blue-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .underline{
