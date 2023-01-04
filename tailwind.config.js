@@ -9,6 +9,7 @@ module.exports = {
         Didot: ['"GFS Didot"'],
         Cinzel: ["Cinzel"],
         sen: ["Sen"],
+        Garamond: ['"EB Garamond"'],
       },
     },
     screens: {
