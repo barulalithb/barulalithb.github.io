@@ -4,7 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
 
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
@@ -1968,6 +1968,26 @@ input[type="range"]::-ms-fill-lower{
   padding-right: 1.25rem;
 }
 
+.px-\[18\%\]{
+  padding-left: 18%;
+  padding-right: 18%;
+}
+
+.px-\[\%\]{
+  padding-left: %;
+  padding-right: %;
+}
+
+.px-\[5\%\]{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.px-\[16\%\]{
+  padding-left: 16%;
+  padding-right: 16%;
+}
+
 .pl-2{
   padding-left: 0.5rem;
 }
@@ -2068,6 +2088,10 @@ input[type="range"]::-ms-fill-lower{
   font-family: Garamond;
 }
 
+.font-\[\]{
+  font-family: ;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2138,6 +2162,10 @@ input[type="range"]::-ms-fill-lower{
 
 .leading-relaxed{
   line-height: 1.625;
+}
+
+.leading-3{
+  line-height: .75rem;
 }
 
 .tracking-widest{
