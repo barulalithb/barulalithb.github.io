@@ -2068,10 +2068,6 @@ input[type="range"]::-ms-fill-lower{
   font-family: Garamond;
 }
 
-.font-\[seb\]{
-  font-family: seb;
-}
-
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2110,22 +2106,6 @@ input[type="range"]::-ms-fill-lower{
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[21px\]{
-  font-size: 21px;
-}
-
-.text-\[36px\]{
-  font-size: 36px;
-}
-
-.text-\[3px\]{
-  font-size: 3px;
-}
-
-.text-\[48px\]{
-  font-size: 48px;
 }
 
 .font-normal{
@@ -2223,14 +2203,6 @@ input[type="range"]::-ms-fill-lower{
 .text-blue-400{
   --tw-text-opacity: 1;
   color: rgb(118 169 250 / var(--tw-text-opacity));
-}
-
-.text-\[\]{
-  color: ;
-}
-
-.text-\[px\]{
-  color: px;
 }
 
 .underline{
